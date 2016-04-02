@@ -4,48 +4,25 @@
     <link rel="stylesheet" href="/assets/styles/index.css" />
 {% endblock %}
 
+<div id="main-section">
 {% block head %}
     <h1><span class=" glyphicon glyphicon-modal-window" aria-hidden="true"></span>MORALIT.ai</h1>
 {% endblock %}
 
 {% block content %}
-        <form id="build-funnelcake" action="/" method="post">
-                <div id="step1">
-                        <!-- <legend>Project</legend>
-                        <div class="field">
-                            <select autofocus name="projects" id="projectsList">
-                                {% if chosenProj %}
-                                    {% for project in projects %}
-                                        {% if project.id == chosenProj %}
-                                            <option value={{project.id}} selected>{{ project.name }}</option>
-                                        {% else %}
-                                            <option value={{project.id}}>{{ project.name }}</option>
-                                        {% endif %}
-                                    {% else %}
-                                        <option value="1">ERROR: NO PROJ FOUND</option>
-                                    {% endfor %}
-                                {% else %}
-                                    {% for project in projects %}
-                                        <option value={{project.id}}>{{ project.name }}</option>
-                                    {% else %}
-                                        <option value="1">ERROR: NO PROJ FOUND</option>
-                                    {% endfor %}
-                                {% endif %}
-
-                            </select>
-                        </div> -->
-
-                        is it moral ? <input type="text" name="moral_form_input"><br>
-                        <a class="waves-effect waves-light btn"><input type="submit" value="Submit"></a>
-
-                        {% if request_history %}
-                            {% for request in request_history %}
-                                <div class="user-request-wrapper">           
-                                    <div class ="chip">{{ request }}</div>
-                                </div>
-                            {% endfor %}    
-                        {% endif %}
-                </div>
-        </form>
+    <form id="build-funnelcake" action="/" method="post">
+        <input type="text" name="moral_form_input"><br>
+        <a class="waves-effect waves-light btn"><input type="submit" value="Submit"></a>
+    </form>
+</div> <!-- main section -->
+<div id="chat-section">
+    {% if request_history %}
+        {% for request in request_history %}
+            <div class="user-request-wrapper">           
+                <div class ="chip">{{ request }}</div>
+            </div>
+        {% endfor %}    
+    {% endif %}
+</div> <!-- chat section -->
 {% endblock %}
 
