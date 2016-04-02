@@ -36,11 +36,13 @@
                         </div> -->
 
                         is it moral ? <input type="text" name="moral_form_input"><br>
-                        <input type="submit" value="Submit">
+                        <a class="waves-effect waves-light btn"><input type="submit" value="Submit"></a>
 
                         {% if request_history %}
-                            {% for request in request_history %}           
-                                <div class ="user-request-wrapper">{{ request }}</div>
+                            {% for request in request_history %}
+                                <div class="user-request-wrapper">           
+                                    <div class ="chip">{{ request }}</div>
+                                </div>
                             {% endfor %}    
                         {% endif %}
                 </div>

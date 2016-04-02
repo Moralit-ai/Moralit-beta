@@ -49,5 +49,16 @@ input[type="submit"] {
 }
 
 .user-request-wrapper {
-    display: block;
+    display: table;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.container {
+    text-align: center;
+}
+
+.chip {
+    display: table-row;
+    float: right;
 }

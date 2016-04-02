@@ -20,7 +20,9 @@ router.post('/', function(request, response) {
 
 	//var result = require('./processEthics')(userInput);
 
-	userRequestsArray.push(userInput);
+	if (userInput.length > 0) {
+		userRequestsArray.push(userInput);
+	}
 	response.render('index.html', {request_history: userRequestsArray});
 });
 
