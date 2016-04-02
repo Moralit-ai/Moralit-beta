@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/assets/styles/index.css" />
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="/">Project Selection</a></li>
+    <li class="active"><a>Experiment Details</a></li>
+{% endblock %}
+
+{% block head %}
+    <h1>Experiment Details</h1>
+    <p>Now define your experiment specifics.</p> 
+{% endblock %}
+
+{% block content %}
+    <form id="build-funnelcake" action="/advDetails/" method="get">
+                <fieldset id="background">
+                    <div class="field">
+                        <div>
+                            <p>Experiment Title:</p>
+                        </div>
+                        <input autofocus required placeholder="[bug 20400] New-tab Funnelcake Build" style="width:100%;" name="exptitle" type="text" value="{{exptitle}}">
+                        </input>
+                    </div>
+
+                    <div class="field">
+                        <div>
+                            <p>Editor URL:</p>
+                        </div>
+                        <input type="url" placeholder="https://www.mozilla.org/en-US/firefox/new/" style="width:100%;" name="editorURL" value="{{editorURL}}">
+                        </input>
+                    </div>
+
+                    <div class="field">
+                        <div>
+                            <p>Experiment URL:</p>
+                        </div>
+                        <input required placeholder="^https:\/\/www\.mozilla\.org\/en-US/firefox\/new\/$" style="width:100%;" name="experimentURL" type="text" value="{{experimentURL}}">
+                        </input>
+                    </div>
+
+                    <div class="field">
+                        <div>
+                            <p>Experiment URL is Regular Expression (true/false):</p>
+                        </div>
+                        <input required placeholder="true" name="isRegex" type="text" style="width:100%;" value="{{isRegex}}">
+                        </input>
+                    </div>
+                    <div class="field">
+                        <div>
+                            <p>Audience:</p>
+                        </div>
+                        <select name="audience" id="audienceList">
+                            {% if chosenAudience %}
+                                {% for audience in audiences %}
+                                    {% if audience.id == chosenAudience %}
+                                        <option value={{audience.id}} selected>{{ audience.name }}</option>
+                                    {% else %}
+                                        <option value={{audience.id}}>{{ audience.name }}</option>
+                                    {% endif %}
+                                {% else %}
+                                    <option value="1">ERROR: NO AUDIENCE FOUND</option>
+                                {% endfor %}
+                            {% else %}
+                                {% for audience in audiences %}
+                                    <option value={{audience.id}}>{{ audience.name }}</option>
+                                {% else %}
+                                    <option value="1">ERROR: NO AUDIENCE FOUND</option>
+                                {% endfor %}
+                            {% endif %}
+
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <div>
+                            <p>Goal:</p>
+                        </div>
+                        <select name="goals" id="goalsList">
+                            {% if chosenGoal %}
+                                {% for goal in goals %}
+                                    {% if goal.id == chosenGoal %}
+                                        <option value={{goal.id}} selected>{{ goal.name }}</option>
+                                    {% else %}
+                                        <option value={{goal.id}}>{{ goal.name }}</option>
+                                    {% endif %}
+                                {% else %}
+                                    <option value="1">ERROR: NO GOAL FOUND</option>
+                                {% endfor %}
+                            {% else %}
+                                {% for goal in goals %}
+                                    <option value={{goal.id}}>{{ goal.name }}</option>
+                                {% else %}
+                                    <option value="1">ERROR: NO GOAL FOUND</option>
+                                {% endfor %}
+                            {% endif %}
+
+                        </select>
+                    </div>
+
+                    <!-- We are defaulting the number of variations to 2 for now
+
+                    <div class="field">
+                        <div>
+                            <p>Number of Variations:</p>
+                        </div>
+                        <input name="numVariations" type="text">
+                            {{ numVariations }}
+                        </input>
+                    </div> 
+
+                    -->
+
+                    <div class="field">
+                        <div>
+                            <p>Percentage of Visitors Included in Experiment:</p>
+                        </div>
+                        <input required placeholder="30" min="0" max="100" type="number" name="pctVisitors" style="width:100%;" value="{{pctVisitors}}">
+                        </input>
+                    </div>
+                    
+                </fieldset>
+        <input type="button" name="formSubmit" value="Back" onclick="window.location='/';" /> 
+        <input type="submit" name="formSubmit" value="Next" />
+    </form>
+{% endblock %}
+

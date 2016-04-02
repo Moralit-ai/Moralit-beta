@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        {% if title %}
+            <title>{{ title }} </title>
+        {% endif %}
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        {% block styles %}{% endblock %}
+    </head>
+    <body>
+        <main>
+            <div class="container">  
+                <div style="margin-bottom: 20px;">
+                    {% block head %}{% endblock %}
+                </div>
+
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

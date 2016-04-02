@@ -1,0 +1,53 @@
+fieldset {
+    padding: 0 10px;
+    margin: 0 0 15px;
+}
+
+.field, .field textarea {
+    display: block;
+}
+
+.field {
+    margin: 15px 0;
+}
+
+.field textarea {
+    margin: 5px 0 0;
+}
+
+#background input[type="text"] {
+    display: block;
+}
+
+.url {
+    margin-left: 5px;
+    width: 50em;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+input[type="submit"] {
+    font-size: 1.1em;
+}
+
+#status ul, #results ul {
+    padding-left: 0;
+}
+
+#status h1 {
+    margin-top: 0;
+}
+
+#status ul {
+    list-style-type: none;
+}
+
+#results ul {
+    list-style-position: inside;
+}
+
+.user-request-wrapper {
+    display: block;
+}

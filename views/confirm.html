@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/assets/styles/index.css" />
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="/">Project Selection</a></li>
+    <li><a href="/expDetails">Experiment Details</a></li>
+    <li><a href="/advDetails">Variation & Schedule</a></li>
+    <li class="active"><a>Build Confirmation</a></li>
+{% endblock %}
+
+{% block head %}
+    <h1>Build Confirmation</h1>
+    <p>Check that your experiment details are correct, and then hit build!</p> 
+{% endblock %}
+
+{% block content %}
+    <form id="build-funnelcake" action="/success/" method="get">
+                <fieldset id="background">
+                    <div class="field">
+                        <p>Project:</p>
+                        <select disabled name="projects" id="projectsList">
+                            {% if chosenProj %}
+                                {% for project in projects %}
+                                    {% if project.id == chosenProj %}
+                                        <option value={{project.id}} selected>{{ project.name }}</option>
+                                    {% else %}
+                                        <option value={{project.id}}>{{ project.name }}</option>
+                                    {% endif %}
+                                {% else %}
+                                    <option value="1">ERROR: NO PROJ FOUND</option>
+                                {% endfor %}
+                            {% else %}
+                                {% for project in projects %}
+                                    <option value={{project.id}}>{{ project.name }}</option>
+                                {% else %}
+                                    <option value="1">ERROR: NO PROJ FOUND</option>
+                                {% endfor %}
+                            {% endif %}
+
+                        </select>
+                    </div>
+                    <div class="field">
+                        <p>Experiment Title:</p>
+                        <input disabled style="width: 100%;" name="exptitle" type="text" value="{{exptitle}}" />
+                    </div>
+
+                    <div class="field">
+                        <p>Editor URL:</p>
+                        <input disabled name="editorURL" type="text" value="{{editorURL}}">
+                    </div>
+
+                    <div class="field">
+                        <p>Experiment URL:</p>
+                        <input disabled name="experimentURL" type="text" value="{{experimentURL}}">
+                    </div>
+
+                    <div class="field">
+                        <p>Experiment URL is Regular Expression:</p>
+                        <input disabled name="isRegex" type="text" value="{{isRegex}}">
+                    </div>
+                    <div class="field">
+                        <p>Audience:</p>
+                        <select name="audience" id="audienceList" disabled>
+                            {% if chosenAudience %}
+                                {% for audience in audiences %}
+                                    {% if audience.id == chosenAudience %}
+                                        <option value={{audience.id}} selected>{{ audience.name }}</option>
+                                    {% else %}
+                                        <option value={{audience.id}}>{{ audience.name }}</option>
+                                    {% endif %}
+                                {% else %}
+                                    <option value="1">ERROR: NO AUDIENCE FOUND</option>
+                                {% endfor %}
+                            {% else %}
+                                {% for audience in audiences %}
+                                    <option value={{audience.id}}>{{ audience.name }}</option>
+                                {% else %}
+                                    <option value="1">ERROR: NO AUDIENCE FOUND</option>
+                                {% endfor %}
+                            {% endif %}
+
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <p>Goal:</p>
+                        <select name="goals" id="goalsList" disabled>
+                            {% if chosenGoal %}
+                                {% for goal in goals %}
+                                    {% if goal.id == chosenGoal %}
+                                        <option value={{goal.id}} selected>{{ goal.name }}</option>
+                                    {% else %}
+                                        <option value={{goal.id}}>{{ goal.name }}</option>
+                                    {% endif %}
+                                {% else %}
+                                    <option value="1">ERROR: NO GOAL FOUND</option>
+                                {% endfor %}
+                            {% else %}
+                                {% for goal in goals %}
+                                    <option value={{goal.id}}>{{ goal.name }}</option>
+                                {% else %}
+                                    <option value="1">ERROR: NO GOAL FOUND</option>
+                                {% endfor %}
+                            {% endif %}
+
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <p>Percentage of Visitors Included in Experiment:</p>
+                        <input disabled name="pctVisitors" type="text" value="{{pctVisitors}}">
+                    </div>
+
+                    <div class="field">
+                        <div>
+                            <p>Variation Title:</p>
+                        </div>
+                        <input disabled name="vartitle" type="text" value="{{vartitle}}">
+                        </input>
+                    </div>
+                    <div class="field">
+                        <div>
+                            <p>Percentage Included:</p>
+                        </div>
+                        <input disabled name="varPercent" type="text" value="{{varPercent}}">
+                        </input>
+                    </div>
+                    <div class="field">
+                        <div>
+                            <p>Custom Javascript:</p>
+                        </div>
+                        <input disabled name="customJS" type="text" value="{{customJS}}">
+                        </input>
+                    </div>
+                {% if startTime or stopTime %}
+                    <legend>Schedule (Optional)</legend>
+                    <div class="field">
+                        <div>
+                            <p>Start Time:</p>
+                        </div>
+                        <input disabled name="startTime" type="text" value="{{startTime}}">
+                        </input>
+                    </div>
+                    <div class="field">
+                        <div>
+                            <p>Stop Time:</p>
+                        </div>
+                        <input disabled name="stopTime" type="text" value="{{stopTime}}">
+                        </input>
+                    </div>
+                </fieldset>
+                {% endif %}
+        <input type="button" name="formSubmit" value="Back" onclick="window.location='/advDetails';" /> 
+        <input type="button" value="Build Funnelcake" onclick="window.location='/success';" />
+    </form>
+{% endblock %}
+

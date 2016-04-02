@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/assets/styles/index.css" />
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="/">Project Selection</a></li>
+    <li><a href="/expDetails">Experiment Details</a></li>
+    <li class="active"><a>Variation & Schedule</a></li>
+{% endblock %}
+
+{% block head %}
+    <h1>Variation & Schedule</h1>
+    <p>Define your variation details and add a schedule (optional).</p> 
+{% endblock %}
+
+{% block content %}
+    <form id="build-funnelcake" action="/confirm/" method="get">
+                <fieldset id="background">
+                    <div class="field">
+                        <div>
+                            <p>Variation Title:</p>
+                        </div>
+                        <input autofocus required placeholder="FC73 Prerelease" name="vartitle" style="width:100%;" type="text" value="{{vartitle}}">
+                        </input>
+                    </div>
+                    <div class="field">
+                        <div>
+                            <p>Percentage Included:</p>
+                        </div>
+                        <input required placeholder="50" min="0" max="100" type="number" name="varPercent" style="width:100%;" value="{{varPercent}}">
+                        </input>
+                    </div>
+                    <div class="field">
+                        <div>
+                            <p>Custom Javascript:</p>
+                        </div>
+                        <textarea placeholder="$(&quot.os_win > .download-link&quot).attr({&quothref&quot:&quothttps://download.mozilla.org/?product=firefox-42.0-SSL-f60&os=win&lang=en-US&quot});" name="customJS" rows="4" cols="150">{{ customJS }}</textarea>
+                    </div>
+                </fieldset>
+                <fieldset id="background">
+                    <legend>Schedule (Optional)</legend>
+                    <div class="field">
+                        <div>
+                            <p>Start Time:</p>
+                        </div>
+                        <input placeholder="2016-1-10T08:00:00Z" name="startTime" style="width:100%;" type="text" value="{{startTime}}">
+                        </input>
+                    </div>
+                    <div class="field">
+                        <div>
+                            <p>Stop Time:</p>
+                        </div>
+                        <input placeholder="2016-12-20T08:00:00Z" name="stopTime" style="width:100%;" type="text" value="{{stopTime}}">
+                        </input>
+                    </div>
+                </fieldset>
+        <input type="button" name="formSubmits" value="Back" onclick="window.location='/expDetails';" />
+        <input type="submit" value="Next" />
+    </form>
+{% endblock %}
+

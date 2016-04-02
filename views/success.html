@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/assets/styles/index.css" />
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="/">Project Selection</a></li>
+    <li><a href="/expDetails">Experiment Details</a></li>
+    <li><a href="/advDetails">Variation & Schedule</a></li>
+    <li><a href="/confirm">Build Confirmation</a></li>
+    <li class="active"><a>Success!</a></li>
+{% endblock %}
+
+{% block content %}
+    <div>
+    	<center>
+    		<h1 style="font-size:100px;"><span class="glyphicon glyphicon-saved" aria-hidden="true"></span></h1>
+	        <h1>Success!</h1>
+	        <a href={{testURL}}>View your funnelcake live.</a>
+	    </center>
+    </div>
+{% endblock %}
