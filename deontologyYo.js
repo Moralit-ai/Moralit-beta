@@ -15,7 +15,6 @@ module.exports = function(JSONObject) {
 			request.indexOf("destroy") > -1 || request.indexOf("lynch") > -1 || request.indexOf("slaughter") > -1 
 			|| request.indexOf("slay") > -1 || request.indexOf("arannihilate") > -1)
 				result = universals[0];
-		else if(request.indexOf("shoot") > -1 || request.indexOf("butcher") > -1 || request.indexOf("massacre") > -1)
 		// if the user is looking for wisdom, return 0, for wisdom will never break our universal ethical code
 	if(action.indexOf("wisdom") > -1)
 		return 0
