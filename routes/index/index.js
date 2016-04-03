@@ -12,15 +12,17 @@ var userRequestsArray = [];
 // requesting root directory
 router.get('/', function(request, response) {
 	//console.log("index.html woo");
-	console.log(request.body.userInput);
 	if(request.body.userInput)
 		userRequestsArray.push(request.body.userInput);
 	response.render('index.html', {request_history: userRequestsArray});
 });
 
 router.post('/', function(request, response) {
+	console.log(request.body.userInput)
+	var answer = require('./build')(request.body.userInput)
+	console.log(answer)
 	// request.body.userInput is from the user... pass the info back here
-	response.send(request.body.userInput);
+	response.send(answer);
 	//response.render('index.html', {request_history: userRequestsArray});
 });
 
