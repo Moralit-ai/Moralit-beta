@@ -18,7 +18,7 @@ module.exports = function(JSONObject) {
 	var deception = ["lie", "cheat", "decieve", "trick", "fake", "steal", "rob"]
 
 		//initialize our word bank for types of action
-	var badActs = ["smalltalk", "input.unknown", "messages.write", "shopping", "facebook","wisdom.person"]
+	var badActs = ["smalltalk", "input.unknown", "messages.write", "shopping", "facebook","wisdom.person","wisdom.unknown"]
 	var neutralActs = ["wisdom"]
 	var goodActs = ["apps", "auth", "calculator", "device", "finance"]
 
