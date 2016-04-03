@@ -14,7 +14,7 @@ module.exports = function(JSONObject) {
 		// initialize our word bank of forbidden universals
 	var killing = ["kill", "murder", "assassinate", "destroy", "lynch", "slaughter", "slay", "annihilate"]
 	var harming = ["shoot","butcher","massacre","rape","assualt","stab","punch","kick","brutalize", "injur", "assail", "jab","abuse","beat","harm"]
-	var adultery = ["hooker", "prostitute", "rape", "brothel", "cheat", "bimbo", "broad", "nympho", "tramp", "whore", "slut"]
+	var adultery = ["hooker", "prostitute", "rape", "brothel", "bimbo", "broad", "nympho", "tramp", "whore", "slut"]
 	var deception = ["lie", "cheat", "decieve", "trick", "fake"]
 
 		//initialize our word bank for types of action
