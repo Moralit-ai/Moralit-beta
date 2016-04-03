@@ -2,7 +2,7 @@ module.exports = function(question, callback) {
 
 
 	var apiai = require('apiai');
-	var app = apiai("76ccb7c7acea4a6884834f6687475222", "8b3e68f16ac6430cb8c40d49c315aa7a");
+	var app = apiai("YOUR KEY", "YOUR KEY");
 
 		var request = app.textRequest(question);
 		 
