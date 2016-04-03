@@ -1,25 +1,34 @@
 {
-    "name": "Bakery",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "postinstall": "./node_modules/bower/bin/bower install"
-    },
-    "dependencies": {
-        "body-parser": "^1.13.2",
-        "bower": "^1.5.3",
-        "debug": "^2.2.0",
-        "express": "^4.13.1",
-        "morgan": "^1.6.1",
-        "nunjucks": "^2.1.0",
-        "prompt": "^0.2.14",
-        "optimizely-node-client": "^0.5.0",
-        "cookie-parser": "^1.4.0",
-        "express-session": "^1.12.1"
-    },
-    "devDependencies": {
-        "gulp": "^3.9.0",
-        "gulp-jsbeautifier": "^1.0.1",
-        "gulp-jshint": "^1.11.2"
-    }
+  "name": "Bakery",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "apiai": "^1.0.8",
+    "body-parser": "^1.13.2",
+    "bower": "^1.5.3",
+    "cookie-parser": "^1.4.0",
+    "debug": "^2.2.0",
+    "express": "^4.13.1",
+    "express-session": "^1.12.1",
+    "morgan": "^1.6.1",
+    "nunjucks": "^2.1.0",
+    "optimizely-node-client": "^0.5.0",
+    "prompt": "^0.2.14"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jsbeautifier": "^1.0.1",
+    "gulp-jshint": "^1.11.2"
+  },
+  "description": "An Optimizely A/B test deployment tool developed by the [Firefox Growth Team](https://wiki.mozilla.org/Growth_Team) at Mozilla.",
+  "main": "OptimizelyClient.js",
+  "bin": {
+    "Bakery": "www.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
