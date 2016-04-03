@@ -7,6 +7,7 @@ module.exports = function(question, callback) {
 		var request = app.textRequest(question);
 		 
 		request.on('response', function(response) {
+			console.log(response)
 		    var kantSucks = require('./deontologyYo')(response);
 		    if(kantSucks == 0)
 		    	if(response.result.metadata.speech)

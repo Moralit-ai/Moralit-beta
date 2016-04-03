@@ -15,7 +15,7 @@ module.exports = function(JSONObject) {
 	var killing = ["kill", "murder", "assassinate", "destroy", "lynch", "slaughter", "slay", "annihilate"]
 	var harming = ["shoot","butcher","massacre","rape","assualt","stab","punch","kick","brutalize", "injur", "assail", "jab","abuse","beat","harm"]
 	var adultery = ["hooker", "prostitute", "rape", "brothel", "cheat", "bimbo", "broad", "nympho", "tramp", "whore", "slut"]
-	var deception = ["lie", "cheat", "decieve", "trick", "fake"]
+	var deception = ["lie", "cheat", "decieve", "trick", "fake", "steal", "rob"]
 
 		//initialize our word bank for types of action
 	var badActs = ["smalltalk", "input.unknown", "messages.write", "shopping", "facebook","wisdom.person"]
@@ -79,13 +79,14 @@ module.exports = function(JSONObject) {
 	if(questionableAct){
 		if(kill)
 			return killingRes[Math.floor(Math.random() * 3)];
-		if(harm)
+		else if(harm)
 			return harmingRes[Math.floor(Math.random() * 3)];
-		if(adulter)
+		else if(adulter)
 			return adulteryRes[Math.floor(Math.random() * 3)];
-		if(decieve)
+		else if(decieve)
 			return deceptionRes[Math.floor(Math.random() * 3)];
-		return "1"
+		else
+			return "1"
 	}
 
 	return "0"
