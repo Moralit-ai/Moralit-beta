@@ -10,9 +10,14 @@
     </head>
     <body>
         <main id="append" class="container">
-                {% block head %}{% endblock %}
-                {% block content %}{% endblock %}
+            {% block head %}{% endblock %}
+            {% block content %}{% endblock %}
+            <form id="build-funnelcake" action="/" method="get">
+            <input type="text" name="moral_form_input"><br>
+            <a class="waves-light btn" id="submit">Submit</a>
+            </form>
         </main>
+
         {% block scripts %}{% endblock %}
     </body>
 </html>

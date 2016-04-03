@@ -125,8 +125,8 @@ main {
 }
 
 #chat-section {
-    height: 600px;
-    max-height: 600px;
+    height: 60%;
+    max-height: 60%;
     overflow-y: scroll;
 }
 
