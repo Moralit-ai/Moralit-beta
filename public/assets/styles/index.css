@@ -130,9 +130,23 @@ main {
     overflow: hidden;
 }
 
+#description {
+    font-size: 1.4rem;
+    line-height: 2.1em;
+}
+
+#text_in_description {
+    position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.theme_purple {
+ color: #86577C;
+}
+
 .ai{
     font-family: 'Orbitron', sans-serif !important;
-    color: #86577C;
 }
 
 #chat-section , #description {
