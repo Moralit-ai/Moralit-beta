@@ -113,6 +113,11 @@ h1 {
     margin-top: 0 !important;
 }
 
+input[type="text"]
+{
+    font-size:2em;
+}
+
 main {
     height: 100vh;
     max-height: 100vh;

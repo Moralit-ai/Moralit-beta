@@ -31,13 +31,13 @@ function appendChatBubble(message, isUserChat){
     };
 }
 
-$("#submit").focus();
-
 function initQuery() {
 	if (i % 2 ==0 ){
 		appendChatBubble((($("input"))[0]).value, true /* isUserChat */);
 	}
 	i++; //I don't even care
+	var objDiv = document.getElementById("chat-section");
+	objDiv.scrollTop = objDiv.scrollHeight;
 }
 
 $(document).keypress(function(e) {
@@ -50,8 +50,11 @@ document.getElementById('build-funnelcake').addEventListener('submit', function(
     e.preventDefault();
 }, false);
 
+
+
 $("#submit").mousedown( function(){
 	initQuery(); 
 });
+
 
 
