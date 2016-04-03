@@ -58,18 +58,53 @@ input[type="submit"] {
     text-align: center;
 }
 
+#chat-section {
+    margin-top: 2%;
+}
+
 .chip {
     min-height: 32px;
     display: table-row;
     float: right;
+    height: auto;
+    max-width: 50%;
+    display: none;
 }
 
-h1 {
-    margin-top: 0 !important;
+.btn {
+    width: 100%;
+    background-color: #86577C !important;
+}
+
+.btn:hover {
+    background-color: #86577C !important;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #86577C;
+    box-shadow: 0 1px 0 0 #86577C;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    background-color: initial !important;
 }
 
 .ai-chip {
     float: left !important;
+}
+
+body {
+    background-color: #494B59;
+    color: white;
+}
+
+input {
+    color: white;
+}
+
+h1 {
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 8rem;
 }
 
 main {
@@ -78,8 +113,20 @@ main {
     overflow: hidden;
 }
 
+.ai{
+    font-family: 'Orbitron', sans-serif !important;
+    color: #86577C;
+}
+
 #chat-section {
     height: 600px;
     max-height: 600px;
     overflow-y: scroll;
+}
+
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: initial !important;
+    background-image: none;
+    color: rgb(0, 0, 0);
 }
