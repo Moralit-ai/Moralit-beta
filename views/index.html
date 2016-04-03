@@ -2,30 +2,25 @@
 
 {% block styles %}
     <link rel="stylesheet" href="/assets/styles/index.css" />
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron:500' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 <div id="main-section">
 {% block head %}
-    <h1><span class=" glyphicon glyphicon-modal-window" aria-hidden="true"></span>MORALIT.ai</h1>
+    <h1><span class=" glyphicon glyphicon-modal-window" aria-hidden="true"></span><span class="white-text">MORALIT</span><span class="ai">.ai</span></h1>
 {% endblock %}
 
 {% block content %}
     <form id="build-funnelcake" action="/" method="get">
         <input type="text" name="moral_form_input"><br>
-        <a class="waves-effect waves-light btn" id="submit">
+        <a class="waves-light btn" id="submit">
             Submit
             <!-- <input type="submit" value="Submit"> -->
         </a>
     </form>
 </div> <!-- main section -->
 <div id="chat-section">
-    {% if request_history %}
-        {% for request in request_history %}
-            <div class="user-request-wrapper">           
-                <div class ="chip">{{ request }}</div>
-            </div>
-        {% endfor %}    
-    {% endif %}
 </div> <!-- chat section -->
 {% block scripts %}
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
