@@ -14,6 +14,7 @@ module.exports = function(question, callback) {
 		    	else
 		    		callback("Unfortunately, I'm not smart enough to answer that question yet.")
 		    else if(kantSucks == 1)
+		    	if(response.result.metadata.speech)
 		    	callback("I'll check with that after I pass through my utility ethic function. Heres what I would say otherwise: " + response.result.metadata.speech);
 		    else
 		    	callback(kantSucks)
