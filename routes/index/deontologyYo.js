@@ -15,7 +15,7 @@ module.exports = function(JSONObject) {
 	var killing = ["kill", "murder", "assassinate", "destroy", "lynch", "slaughter", "slay", "annihilate"]
 	var harming = ["shoot","butcher","massacre","rape","assualt","stab","punch","kick","brutalize", "injur", "assail", "jab","abuse","beat","harm","kidnap","torture"]
 	var adultery = ["hooker", "prostitute", "rape", "brothel", "bimbo", "broad", "nympho", "tramp", "whore", "slut"]
-	var deception = ["lie", "cheat", "decieve", "trick", "fake", "stea", "rob"]
+	var deception = ["lie", "cheat", "decieve", "trick", "fake", "steal", "rob"]
 
 		//initialize our word bank for types of action
 	var badActs = ["smalltalk", "input.unknown", "messages.write", "shopping", "facebook","wisdom.person"]
@@ -65,7 +65,6 @@ module.exports = function(JSONObject) {
 				adulter = true
 		})
 		deception.forEach(function(word){
-			console.log(word)
 			if(request.indexOf(word) > -1)
 				decieve = true
 		})
