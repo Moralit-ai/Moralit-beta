@@ -24,17 +24,26 @@ function appendChatBubble(message, isUserChat){
 	var style = isUserChat ? '' : 'ai-chip';
 
     $( '<div class="user-request-wrapper"><div class="chip '+style+'">' + message +' </div></div>').appendTo( "#chat-section" );
-    $('.chip').fadeIn(1000);
+    $('.chip').fadeIn(1500);
 
     if (isUserChat) {
     	callAjax(message);	
-    };
+    } else {
+    	var objDiv = document.getElementById("chat-section");
+		objDiv.scrollTop = objDiv.scrollHeight;
+    }
 }
 
-$("#submit").focus();
-
 function initQuery() {
-	if (i % 2 ==0 ){
+
+	if(i == 0 ) {
+		$('#description').fadeOut(1000, function(){
+			$('#chat-section').fadeIn(1000);
+		});
+
+	}
+
+	if (i % 2 ==0 && (($("input"))[0]).value != "" ){
 		appendChatBubble((($("input"))[0]).value, true /* isUserChat */);
 	}
 	i++; //I don't even care
@@ -50,8 +59,11 @@ document.getElementById('build-funnelcake').addEventListener('submit', function(
     e.preventDefault();
 }, false);
 
+
+
 $("#submit").mousedown( function(){
 	initQuery(); 
 });
+
 
 

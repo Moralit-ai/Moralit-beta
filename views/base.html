@@ -2,6 +2,7 @@
 <html lang="en-US" dir="ltr">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% if title %}
             <title>{{ title }} </title>
         {% endif %}
@@ -13,9 +14,10 @@
             {% block head %}{% endblock %}
             {% block content %}{% endblock %}
             <form id="build-funnelcake" action="/" method="get">
-            <input type="text" name="moral_form_input"><br>
+            <input type="text" name="moral_form_input" autofocus><br>
             <a class="waves-light btn" id="submit">Submit</a>
             </form>
+            <p>Developed by <a href="https://www.linkedin.com/in/francescostl">Francesco Polizzi</a>, <a href="http://kelseyhrub.es">Kelsey Hrubes</a>, <a href="http://brendongeils.com">Brendon Geils</a> @ <a href="">HackPrinceton</a> </p>
         </main>
 
         {% block scripts %}{% endblock %}

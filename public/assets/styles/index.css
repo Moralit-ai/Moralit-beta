@@ -58,9 +58,7 @@ input[type="submit"] {
     text-align: center;
 }
 
-#chat-section {
-    margin-top: 2%;
-}
+
 
 .chip {
     min-height: 32px;
@@ -70,11 +68,18 @@ input[type="submit"] {
     max-width: 50%;
     display: none;
     box-shadow: 0 16px 28px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21);
+    font-size: 1.5em;
+}
+
+p {
+    font-size: .8em;
+    margin-top: 2%;
 }
 
 .btn {
     width: 100%;
     background-color: #86577C !important;
+    font-size: 2em;
 }
 
 .btn:hover {
@@ -111,6 +116,12 @@ h1 {
     font-family: 'Hammersmith One', sans-serif;
     font-size: 8rem;
     margin-top: 0 !important;
+    text-shadow: black .05em .05em .05em;
+}
+
+input[type="text"]
+{
+    font-size:2em;
 }
 
 main {
@@ -124,10 +135,15 @@ main {
     color: #86577C;
 }
 
-#chat-section {
+#chat-section , #description {
     height: 60%;
     max-height: 60%;
     overflow-y: scroll;
+    margin-top: 2%;
+}
+
+#chat-section {
+    display: none;
 }
 
 
