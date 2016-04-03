@@ -59,16 +59,27 @@ input[type="submit"] {
 }
 
 .chip {
+    min-height: 32px;
     display: table-row;
     float: right;
+}
+
+h1 {
+    margin-top: 0 !important;
 }
 
 .ai-chip {
     float: left !important;
 }
 
-.vertical-center {
-   position: relative;
-  top: 50%;
-  transform: translateY(50%);
+main {
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+#chat-section {
+    height: 600px;
+    max-height: 600px;
+    overflow-y: scroll;
 }
