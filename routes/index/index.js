@@ -19,11 +19,12 @@ router.get('/', function(request, response) {
 
 router.post('/', function(request, response) {
 	console.log(request.body.userInput)
-	var answer = require('./build')(request.body.userInput)
-	console.log(answer)
-	// request.body.userInput is from the user... pass the info back here
-	response.send(answer);
-	//response.render('index.html', {request_history: userRequestsArray});
+	require('./build')(request.body.userInput, function(answer) {
+		console.log(answer)
+		// request.body.userInput is from the user... pass the info back here
+		response.send(answer)
+		//response.render('index.html', {request_history: userRequestsArray});
+	});
 });
 
 
