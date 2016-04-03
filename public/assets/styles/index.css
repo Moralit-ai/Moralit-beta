@@ -63,6 +63,10 @@ input[type="submit"] {
     float: right;
 }
 
+.ai-chip {
+    float: left !important;
+}
+
 .vertical-center {
    position: relative;
   top: 50%;

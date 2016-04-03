@@ -10,6 +10,7 @@ function callAjax(userInput){
   			console.log(thrownError);
        	},
        	success: function(responseText){
+       		appendChatBubble(responseText, false /* isUserChat */);
        		console.log(responseText);
        	}
 		})
@@ -17,39 +18,22 @@ function callAjax(userInput){
   		// eventually append returned msg		
   	});
 }
+//+ isUserChat ? '' : 'ai-chip' +'
 
 function appendChatBubble(message, isUserChat){
+	var style = isUserChat ? '' : 'ai-chip';
 
-    $( '<div class="user-request-wrapper"><div class ="chip">' + message +' </div></div>').appendTo( "#chat-section" );
+    $( '<div class="user-request-wrapper"><div class="chip '+style+'">' + message +' </div></div>').appendTo( "#chat-section" );
 
-    callAjax(message);
+    if (isUserChat) {
+    	callAjax(message);	
+    };
 }
 
 
-
-
 $("#submit").mousedown( function(){
-
 	if (i % 2 ==0 ){
 		appendChatBubble((($("input"))[0]).value, true /* isUserChat */);
 	}
 	i++; //I don't even care
-
-
-  //    $.ajax({
-  // 		method: "POST",
-  // 		url: "/",
-
-  // 		data: {userInput: (($("input"))[0]).value},
-  // 		error: function (xhr, ajaxOptions, thrownError) {
-  // 			console.log(thrownError);
-  //      	},
-  //      	success: function(responseText){
-  //      		console.log(responseText);
-  //      	}
-		// })
-  // 		.done(function( msg ) {
-  			
-  // 	});
-
 });
