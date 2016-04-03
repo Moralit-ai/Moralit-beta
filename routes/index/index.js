@@ -11,19 +11,17 @@ var userRequestsArray = [];
 
 // requesting root directory
 router.get('/', function(request, response) {
-	console.log("index.html woo");
+	//console.log("index.html woo");
+	console.log(request.body.userInput);
+	if(request.body.userInput)
+		userRequestsArray.push(request.body.userInput);
 	response.render('index.html', {request_history: userRequestsArray});
 });
 
 router.post('/', function(request, response) {
-	var userInput = request.body.moral_form_input;
-
-	//var result = require('./processEthics')(userInput);
-
-	if (userInput.length > 0) {
-		userRequestsArray.push(userInput);
-	}
-	response.render('index.html', {request_history: userRequestsArray});
+	// request.body.userInput is from the user... pass the info back here
+	response.send(request.body.userInput);
+	//response.render('index.html', {request_history: userRequestsArray});
 });
 
 

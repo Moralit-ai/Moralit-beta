@@ -9,12 +9,10 @@
         {% block styles %}{% endblock %}
     </head>
     <body>
-        <main class="container vertical-center">
+        <main id="append" class="container vertical-center">
                 {% block head %}{% endblock %}
                 {% block content %}{% endblock %}
         </main>
-        <script src="/lib/jquery/dist/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
         {% block scripts %}{% endblock %}
     </body>
 </html>

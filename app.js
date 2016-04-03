@@ -47,5 +47,6 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+//app.get('/', function(req, res) {res.render('index.html')});
 
 module.exports = app;
