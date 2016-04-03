@@ -1,0 +1,14 @@
+@media only screen and (max-device-width: 480px) {
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	.chip {
+		    font-size: 1em;
+	}
+
+	input[type="text"] {
+    	font-size: 1em;
+	}
+}
