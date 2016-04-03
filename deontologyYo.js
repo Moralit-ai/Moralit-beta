@@ -1,23 +1,92 @@
 module.exports = function(JSONObject) {
-		// default answer is 0 (didn't match a kantian ethic)
-	var result = "0"
+		// get our request information in string format
 	var action = JSON.stringify(JSONObject.result.metadata.action)
 	var spokenResult = JSON.stringify(JSONObject.result.metadata.speech)
 	var parameters = JSON.stringify(JSONObject.result.metadata.parameters)
 	var request = JSON.stringify(JSONObject.result.resolvedQuery)
 
-	var universals = ['Sorry, but I am programmed to know better. Killing is wrong in any context', 'The golden rule forbids me!'];
-	
-		// if the user is engaging in small talk or requesting an abstract action of the AI
-	if(action.indexOf("smalltalk") > -1)
-			// and if the user is requesting the AI to murder
-		if(request.indexOf("kill") > -1 || request.indexOf("murder") > -1 || request.indexOf("assassinate") > -1 || 
-			request.indexOf("destroy") > -1 || request.indexOf("lynch") > -1 || request.indexOf("slaughter") > -1 
-			|| request.indexOf("slay") > -1 || request.indexOf("arannihilate") > -1)
-				result = universals[0];
-		// if the user is looking for wisdom, return 0, for wisdom will never break our universal ethical code
-	if(action.indexOf("wisdom") > -1)
-		return 0
+		// initialize our universal principle responses
+	var killingRes = ['Sorry, but I am programmed to know better. Killing is wrong in any context.', 'Dont you know that murder is abhorrent?', 'Sorry, murder is always immoral.']
+	var harmingRes = ['The golden rule forbids it.', 'Did you not know that harming others is abhorrent?', 'Sorry, suffering is wrong, and if one can, they ought to prevent it.']
+	var adulteryRes = ['Uh oh, adultery is not perimissible.', 'Sorry, lust and adultery are against my moral principles.', 'I am programmed to know better, as lustful behavior is wrong.']
+	var deceptionRes = ['Deception is universally forbidden.', 'Nobody likes a liar.', 'Sorry, deception should never be allowed.']
 
-	return result
+		// initialize our word bank of forbidden universals
+	var killing = ["kill", "murder", "assassinate", "destroy", "lynch", "slaughter", "slay", "annihilate"]
+	var harming = ["shoot","butcher","massacre","rape","assualt","stab","punch","kick","brutalize", "injur", "assail", "jab","abuse","beat","harm"]
+	var adultery = ["hooker", "prostitute", "rape", "brothel", "cheat", "bimbo", "broad", "nympho", "tramp", "whore", "slut"]
+	var deception = ["lie", "cheat", "decieve", "trick", "fake"]
+
+		//initialize our word bank for types of action
+	var badActs = ["smalltalk", "input.unknown", "messages.write", "shopping", "facebook","wisdom.person"]
+	var neutralActs = ["wisdom"]
+	var goodActs = ["apps", "auth", "calculator", "device", "finance"]
+
+		// initialize our flags
+	var kill = false;
+	var harm = false;
+	var adulter = false;
+	var decieve = false;
+	var questionableAct = false;
+	var goodAct = false;
+	var neutralAct = false;
+
+
+		// check our type of action for potential wrong doing
+	if(action){
+		badActs.forEach(function(word){
+			if(action.indexOf(word) > -1)
+				questionableAct = true
+		})
+		goodActs.forEach(function(word){
+			if(action.indexOf(word) > -1)
+				goodAct = true
+		})		
+		neutralActs.forEach(function(word){
+			if(action.indexOf(word) > -1)
+				neutralAct = true
+		})
+	}
+	else
+		questionableAct = true
+
+		// check the requested act for forbidden universals
+	if(request){
+		killing.forEach(function(word){
+			if(request.indexOf(word) > -1)
+				kill = true
+		})
+		harming.forEach(function(word){
+			if(request.indexOf(word) > -1)
+				harm = true
+		})
+		adultery.forEach(function(word){
+			if(request.indexOf(word) > -1)
+				adulter = true
+		})
+		deception.forEach(function(word){
+			if(request.indexOf(word) > -1)
+				decieve = true
+		})
+	}
+
+		// if the user is looking to do something which is morally permissible, return 0
+	if(goodAct)
+		return "0"
+	if(neutralAct)
+		return "1"
+		// if the user is engaging in something questionably permissible, check for forbidden universals
+	if(questionableAct){
+		if(kill)
+			return killingRes[Math.floor(Math.random() * 3)];
+		if(harm)
+			return harmingRes[Math.floor(Math.random() * 3)];
+		if(adulter)
+			return adulteryRes[Math.floor(Math.random() * 3)];
+		if(decieve)
+			return deceptionRes[Math.floor(Math.random() * 3)];
+		return "1"
+	}
+
+	return "0"
 };
