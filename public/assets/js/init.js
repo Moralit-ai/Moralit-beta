@@ -23,7 +23,7 @@ function callAjax(userInput){
 function appendChatBubble(message, isUserChat){
 	var style = isUserChat ? '' : 'ai-chip';
 
-    $( '<div class="user-request-wrapper"><div class="chip '+style+'">' + message +' </div></div>').appendTo( "#chat-section" );
+    $( '<div class="user-request-wrapper hoverable"><div class="chip '+style+'">' + message +' </div></div>').appendTo( "#chat-section" );
     $('.chip').fadeIn(1500);
 
     if (isUserChat) {
@@ -45,6 +45,7 @@ function initQuery() {
 
 	if (i % 2 ==0 && (($("input"))[0]).value != "" ){
 		appendChatBubble((($("input"))[0]).value, true /* isUserChat */);
+		$("input").val('');
 	}
 	i++; //I don't even care
 }
