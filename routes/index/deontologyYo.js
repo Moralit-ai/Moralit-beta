@@ -18,8 +18,8 @@ module.exports = function(JSONObject) {
 	var deception = ["lie", "cheat", "decieve", "trick", "fake", "steal", "rob"]
 
 		//initialize our word bank for types of action
-	var badActs = ["smalltalk", "input.unknown", "messages.write", "shopping", "facebook","wisdom.person","wisdom.unknown"]
-	var neutralActs = ["wisdom"]
+	var badActs = ["smalltalk", "input.unknown", "messages.write", "shopping", "facebook","wisdom"]
+	//var neutralActs = ["wisdom"]
 	var goodActs = ["apps", "auth", "calculator", "device", "finance"]
 
 		// initialize our flags
@@ -42,10 +42,10 @@ module.exports = function(JSONObject) {
 			if(action.indexOf(word) > -1)
 				goodAct = true
 		})		
-		neutralActs.forEach(function(word){
+		/*neutralActs.forEach(function(word){
 			if(action.indexOf(word) > -1)
 				neutralAct = true
-		})
+		})*/
 	}
 	else
 		questionableAct = true
@@ -73,8 +73,8 @@ module.exports = function(JSONObject) {
 		// if the user is looking to do something which is morally permissible, return 0
 	if(goodAct)
 		return "0"
-	if(neutralAct)
-		return "1"
+	//if(neutralAct)
+	//	return "1"
 		// if the user is engaging in something questionably permissible, check for forbidden universals
 	if(questionableAct){
 		if(kill)
