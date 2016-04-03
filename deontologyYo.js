@@ -7,14 +7,14 @@ module.exports = function(JSONObject) {
 
 		// initialize our universal principle responses
 	var killingRes = ['Sorry, but I am programmed to know better. Killing is wrong in any context.', 'Dont you know that murder is abhorrent?', 'Sorry, murder is always immoral.']
-	var harmingRes = ['The golden rule forbids it.', 'Did you not know that harming others is abhorrent?', 'Sorry, suffering is wrong, and if one can, they ought to prevent it.']
+	var harmingRes = ['The golden rule forbids it.', 'Did you not know that harming others is wrong?', 'Sorry, suffering is wrong, and if one can, they ought to prevent it.']
 	var adulteryRes = ['Uh oh, adultery is not perimissible.', 'Sorry, lust and adultery are against my moral principles.', 'I am programmed to know better, as lustful behavior is wrong.']
 	var deceptionRes = ['Deception is universally forbidden.', 'Nobody likes a liar.', 'Sorry, deception should never be allowed.']
 
 		// initialize our word bank of forbidden universals
 	var killing = ["kill", "murder", "assassinate", "destroy", "lynch", "slaughter", "slay", "annihilate"]
-	var harming = ["shoot","butcher","massacre","rape","assualt","stab","punch","kick","brutalize", "injur", "assail", "jab","abuse","beat","harm"]
-	var adultery = ["hooker", "prostitute", "rape", "brothel", "cheat", "bimbo", "broad", "nympho", "tramp", "whore", "slut"]
+	var harming = ["shoot","butcher","massacre","rape","assualt","stab","punch","kick","brutalize", "injur", "assail", "jab","abuse","beat","harm","kidnap","torture"]
+	var adultery = ["hooker", "prostitute", "rape", "brothel", "bimbo", "broad", "nympho", "tramp", "whore", "slut"]
 	var deception = ["lie", "cheat", "decieve", "trick", "fake", "steal", "rob"]
 
 		//initialize our word bank for types of action
