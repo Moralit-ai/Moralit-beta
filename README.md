@@ -1,4 +1,4 @@
-# Bakery
+# Moralit.ai
 
 An artificially intelligent "personal assistant" simulation capable of ethical decision making, developed by [Francesco Polizzi](http://linkedin.com/in/Francescostl), [Kelsey Hrubes](http://kelseyhrub.es/), and [Brendon Geils](http://brendongeils.com/) at [HackPrinceton](https://hackprinceton.com/). View a live verison of this app at [http://moralit-ai.herokuapp.com/](http://moralit-ai.herokuapp.com/)
 
