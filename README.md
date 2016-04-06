@@ -6,7 +6,7 @@ An artificially intelligent "personal assistant" simulation capable of ethical d
 
 1. [About](https://github.com/moralit-ai/moralit-beta#about)
 2. [Inspiration](https://github.com/moralit-ai/moralit-beta#inspiration)
-3. [How we built it](moralit-ai/moralit-beta#process)
+3. [How we built it](https://github.com/moralit-ai/moralit-beta#process)
 2. [Usage](https://github.com/moralit-ai/moralit-beta#usage)
 
 # About
